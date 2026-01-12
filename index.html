@@ -53,359 +53,141 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Stained Glass Hero Prompt Generator</h1>
+<div class="wrap">
+<h1>Stained Glass Hero Prompt Generator</h1>
 
-    <div class="grid">
-      <!-- Controls -->
-      <div class="card">
-        <h2>Click to set options</h2>
+<div class="grid">
+<div class="card">
+<h2>Click to set options</h2>
 
-        <div class="row">
-          <label>Hero #</label>
-          <input id="heroNum" type="number" min="1" max="99" value="1" />
-          <label style="margin-left:8px">Optional title/tag</label>
-          <input id="heroTag" type="text" placeholder="e.g., Knight of the Breach (optional)" />
-        </div>
+<div class="row">
+<label>Hero #</label>
+<input id="heroNum" type="number" min="1" max="99" value="1" />
+<label style="margin-left:8px">Optional title/tag</label>
+<input id="heroTag" type="text" placeholder="e.g., Knight of the Breach (optional)" />
+</div>
 
-        <div class="row">
-          <label>Gender</label>
-          <div class="pillset" id="genderSet">
-            <div class="pill active" data-value="male">Male</div>
-            <div class="pill" data-value="female">Female</div>
-            <div class="pill" data-value="non-binary">Non-binary</div>
-            <div class="pill" data-value="unspecified">Unspecified</div>
-          </div>
-        </div>
+<div class="row">
+<label>Gender</label>
+<div class="pillset" id="genderSet">
+<div class="pill active" data-value="male">Male</div>
+<div class="pill" data-value="female">Female</div>
+<div class="pill" data-value="non-binary">Non-binary</div>
+<div class="pill" data-value="unspecified">Unspecified</div>
+</div>
+</div>
 
-        <div class="row">
-          <label>Color theme</label>
-          <div class="pillset" id="colorSet">
-            <div class="pill active" data-value="gold">Gold</div>
-            <div class="pill" data-value="silver">Silver</div>
-            <div class="pill" data-value="copper">Copper</div>
-            <div class="pill" data-value="grey">Grey</div>
-            <div class="pill" data-value="tan">Tan</div>
-          </div>
-        </div>
+<div class="row">
+<label>Color theme</label>
+<div class="pillset" id="colorSet">
+<div class="pill active" data-value="gold">Gold</div>
+<div class="pill" data-value="silver">Silver</div>
+<div class="pill" data-value="copper">Copper</div>
+<div class="pill" data-value="obsidian">Obsidian</div>
+<div class="pill" data-value="ivory">Ivory</div>
+</div>
+</div>
 
-        <div class="row">
-          <label>Role</label>
-          <div class="pillset" id="roleSet">
-            <div class="pill active" data-value="knight">Knight</div>
-            <div class="pill" data-value="mage">Mage</div>
-            <div class="pill" data-value="healer">Healer</div>
-          </div>
-        </div>
+<div class="row">
+<label>Role</label>
+<div class="pillset" id="roleSet">
+<div class="pill active" data-value="knight">Knight</div>
+<div class="pill" data-value="mage">Mage</div>
+<div class="pill" data-value="healer">Healer</div>
+</div>
+</div>
 
-        <div class="two">
-          <div>
-            <div class="row">
-              <label>Knight weapon</label>
-              <select id="knightWeapon">
-                <option value="hammer" selected>Warhammer / hammer (default)</option>
-                <option value="mace">Mace</option>
-                <option value="sword">Sword</option>
-                <option value="spear">Spear</option>
-              </select>
-            </div>
-            <div class="row">
-              <label>Include shield?</label>
-              <select id="includeShield">
-                <option value="no" selected>No shield</option>
-                <option value="yes">Yes, add a shield</option>
-              </select>
-            </div>
-          </div>
+<div class="two">
+<div>
+<div class="row">
+<label>Knight weapon</label>
+<select id="knightWeapon">
+<option value="hammer" selected>Warhammer / hammer (default)</option>
+<option value="mace">Mace</option>
+<option value="sword">Sword</option>
+<option value="spear">Spear</option>
+</select>
+</div>
+<div class="row">
+<label>Include shield?</label>
+<select id="includeShield">
+<option value="no" selected>No shield</option>
+<option value="yes">Yes, add a shield</option>
+</select>
+</div>
+</div>
 
-          <div>
-            <div class="row">
-              <label>Mage magic type</label>
-              <select id="mageMagic">
-                <option value="light (radiant)" selected>Light / radiant</option>
-                <option value="fire">Fire</option>
-                <option value="ice">Ice</option>
-                <option value="illusion">Illusion</option>
-                <option value="shadow">Shadow</option>
-                <option value="storm">Storm</option>
-                <option value="arcane runes">Arcane runes</option>
-              </select>
-            </div>
-            <div class="row">
-              <label>Healer: show a patient?</label>
-              <select id="healerPatient">
-                <option value="no" selected>No, healer stands alone</option>
-                <option value="yes">Yes, tending a wounded ally</option>
-              </select>
-            </div>
-          </div>
-        </div>
+<div>
+<div class="row">
+<label>Mage magic type</label>
+<select id="mageMagic">
+<option value="light (radiant)" selected>Light / radiant</option>
+<option value="fire">Fire</option>
+<option value="ice">Ice</option>
+<option value="illusion">Illusion</option>
+<option value="shadow">Shadow</option>
+<option value="storm">Storm</option>
+<option value="arcane runes">Arcane runes</option>
+</select>
+</div>
+<div class="row">
+<label>Healer: show a patient?</label>
+<select id="healerPatient">
+<option value="no" selected>No, healer stands alone</option>
+<option value="yes">Yes, tending a wounded ally</option>
+</select>
+</div>
+</div>
+</div>
 
-        <div class="row">
-          <label>Posture</label>
-          <select id="posture">
-            <option value="stepping forward with purpose" selected>Stepping forward (purpose)</option>
-            <option value="braced stance, weight shifted, ready to act">Braced stance</option>
-            <option value="calm centered stance, hands poised">Calm & centered</option>
-            <option value="leaning into the spell/effort, cloak sweeping">Leaning into action</option>
-            <option value="kneeling in reverence or focus">Kneeling</option>
-            <option value="turning slightly in profile, dynamic twist">Twisting profile</option>
-            <option value="raised weapon or raised casting hand, dramatic silhouette">Raised arm silhouette</option>
-          </select>
-        </div>
+<div class="row">
+<label>Background (symbolic)</label>
+<select id="background">
+<option value="abstract ruins and broken arches, softly suggested" selected>Ruins / arches</option>
+<option value="misty crypt interior with candles and stonework silhouettes">Crypt / candles</option>
+<option value="distant battlements and shattered gate, minimal detail">Battlements / gate</option>
+<option value="moonlit stone columns and drifting ash, minimal detail">Moonlit columns</option>
+<option value="radiant halo burst and geometric rays, mostly abstract">Halo rays</option>
+</select>
+</div>
 
-        <div class="row">
-          <label>Background (symbolic)</label>
-          <select id="background">
-            <option value="abstract ruins and broken arches, softly suggested" selected>Ruins / arches</option>
-            <option value="misty crypt interior with candles and stonework silhouettes">Crypt / candles</option>
-            <option value="distant battlements and shattered gate, minimal detail">Battlements / gate</option>
-            <option value="moonlit stone columns and drifting ash, minimal detail">Moonlit columns</option>
-            <option value="radiant halo burst and geometric rays, mostly abstract">Halo rays</option>
-          </select>
-        </div>
+<div class="row">
+<label>Frame style</label>
+<select id="frame">
+<option value="tall arched stained glass window with medieval decorative border" selected>Classic arched window</option>
+<option value="arched window with heavier leadwork and gothic tracery">Gothic tracery</option>
+<option value="arched window with simpler border, more open glass panels">Simple border</option>
+</select>
+</div>
 
-        <div class="row">
-          <label>Frame style</label>
-          <select id="frame">
-            <option value="tall arched stained glass window with medieval decorative border" selected>Classic arched window</option>
-            <option value="arched window with heavier leadwork and gothic tracery">Gothic tracery</option>
-            <option value="arched window with simpler border, more open glass panels">Simple border</option>
-          </select>
-        </div>
+</div>
 
-        <div class="row">
-          <label>Hard rules</label>
-          <div class="pillset">
-            <div class="pill active" id="noTextPill" data-bool="true">No text / letters</div>
-            <div class="pill active" id="storybookPill" data-bool="true">Storybook illustration</div>
-            <div class="pill active" id="leadLinesPill" data-bool="true">Visible lead lines</div>
-          </div>
-        </div>
+<div class="card">
+<h2>Generated prompt</h2>
+<textarea id="out" spellcheck="false"></textarea>
+</div>
+</div>
+</div>
 
-        <div class="btns">
-          <button class="primary" id="genBtn">Generate Prompt</button>
-          <button class="good" id="copyBtn">Copy</button><span class="toast" id="toast">Copied!</span>
-          <button class="bad" id="resetBtn">Reset</button>
-        </div>
-
-        <div class="mini">
-          Tip: Pick <span class="smallcaps">role + color + gender</span> first. Knight uses “weapon + shield,” Mage uses “magic type,” Healer uses “patient.”
-        </div>
-      </div>
-
-      <!-- Output -->
-      <div class="card">
-        <h2>Generated prompt</h2>
-        <textarea id="out" spellcheck="false" placeholder="Click Generate Prompt…"></textarea>
-        <div class="mini">
-          This is tuned for: **fantasy stained-glass**, **illustrated-book vibe**, **no text**, **consistent arched memorial window**.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function setActive(containerId, value) {
-      const el = document.getElementById(containerId);
-      [...el.querySelectorAll(".pill")].forEach(p => p.classList.toggle("active", p.dataset.value === value));
-    }
-    function getActive(containerId, fallback) {
-      const el = document.getElementById(containerId);
-      const a = el.querySelector(".pill.active");
-      return a ? a.dataset.value : fallback;
-    }
-    function wirePillSet(containerId, defaultValue) {
-      const el = document.getElementById(containerId);
-      el.addEventListener("click", (e) => {
-        const p = e.target.closest(".pill");
-        if (!p) return;
-        [...el.querySelectorAll(".pill")].forEach(x => x.classList.remove("active"));
-        p.classList.add("active");
-      });
-      setActive(containerId, defaultValue);
-    }
-
-    // Toggle boolean pills
-    function wireBoolPill(id, defaultOn=true) {
-      const el = document.getElementById(id);
-      if (defaultOn) el.classList.add("active");
-      el.dataset.bool = defaultOn ? "true" : "false";
-      el.addEventListener("click", () => {
-        const on = el.dataset.bool === "true";
-        el.dataset.bool = (!on).toString();
-        el.classList.toggle("active", !on);
-      });
-    }
-    function boolOn(id){ return document.getElementById(id).dataset.bool === "true"; }
-
-    wirePillSet("genderSet", "male");
-    wirePillSet("colorSet", "gold");
-    wirePillSet("roleSet", "knight");
-
-    wireBoolPill("noTextPill", true);
-    wireBoolPill("storybookPill", true);
-    wireBoolPill("leadLinesPill", true);
-
-    // Make role switch feel smart
-    document.getElementById("roleSet").addEventListener("click", () => {
-      const role = getActive("roleSet", "knight");
-      // Enable/disable relevant selects (purely visual; prompt generator handles logic too)
-      document.getElementById("knightWeapon").disabled = role !== "knight";
-      document.getElementById("includeShield").disabled = role !== "knight";
-      document.getElementById("mageMagic").disabled = role !== "mage";
-      document.getElementById("healerPatient").disabled = role !== "healer";
-    });
-
-    function roleLine(role, gender, color, opts){
-      const g = (gender === "unspecified") ? "" : (gender + " ");
-      if (role === "knight"){
-        const weapon = opts.knightWeapon === "hammer" ? "a heavy warhammer (hammer)" : `a ${opts.knightWeapon}`;
-        const shield = opts.includeShield === "yes" ? " and a large shield" : "";
-        return `The subject is ${g}knight, clad in ${color}-themed armor, wielding ${weapon}${shield}.`;
-      }
-      if (role === "mage"){
-        return `The subject is ${g}mage, channeling ${opts.mageMagic} magic, rendered through symbolic stained-glass effects.`;
-      }
-      // healer
-      if (opts.healerPatient === "yes"){
-        return `The subject is ${g}healer, shown tending a wounded ally with gentle restorative light, all in stained-glass form.`;
-      }
-      return `The subject is ${g}healer, standing alone with ritual hands and soft restorative light, all in stained-glass form.`;
-    }
-
-    function magicDetails(magic){
-      // keep it short + actionable, no text-like glyphs
-      switch(magic){
-        case "illusion":
-          return "Illusion is shown via layered reflections, duplicated silhouettes, warped light paths, and overlapping translucent forms—no readable runes or writing.";
-        case "fire":
-          return "Fire magic is shown as copper-gold flame shapes and ember motes formed from glass segments and leadwork.";
-        case "ice":
-          return "Ice magic is shown as sharp crystalline shards and frosty arcs, cool silver-blue within the palette.";
-        case "shadow":
-          return "Shadow magic is shown as smoky negative space, dim halos, and broken light rays within grey/tan tones.";
-        case "storm":
-          return "Storm magic is shown as jagged lightning arcs and swirling winds rendered as glass ribbons, kept within the palette.";
-        case "arcane runes":
-          return "Arcane power is shown as geometric halos and abstract sigil-shapes—avoid anything that resembles letters or readable text.";
-        default:
-          return "Radiant magic is shown as golden orbs, halos, and soft rays formed from glass segments and lead lines.";
-      }
-    }
-
-    function generatePrompt(){
-      const heroNum = document.getElementById("heroNum").value || "1";
-      const heroTag = document.getElementById("heroTag").value.trim();
-      const gender = getActive("genderSet", "male");
-      const color = getActive("colorSet", "gold");
-      const role = getActive("roleSet", "knight");
-
-      const opts = {
-        knightWeapon: document.getElementById("knightWeapon").value,
-        includeShield: document.getElementById("includeShield").value,
-        mageMagic: document.getElementById("mageMagic").value,
-        healerPatient: document.getElementById("healerPatient").value,
-        posture: document.getElementById("posture").value,
-        background: document.getElementById("background").value,
-        frame: document.getElementById("frame").value
-      };
-
-      const titleLine = heroTag ? `Hero #${heroNum}: ${heroTag}.` : `Hero #${heroNum}.`;
-
-      const noText = boolOn("noTextPill");
-      const storybook = boolOn("storybookPill");
-      const leadLines = boolOn("leadLinesPill");
-
-      const roleDesc = roleLine(role, gender, color, opts);
-      const magicExtra = (role === "mage") ? (" " + magicDetails(opts.mageMagic)) : "";
-
-      const shieldNote = (role !== "knight" && opts.includeShield === "yes")
-        ? " Include a shield only if it supports the scene."
-        : "";
-
-      const constraints = [
-        "Fantasy stained glass artwork (NOT photorealistic).",
-        storybook ? "Illustrated medieval fantasy book vibe: inked outlines, painterly shading, readable shapes." : "",
-        leadLines ? "Visible lead lines and segmented colored glass panels; translucent glow." : "",
-        `Primary color theme: ${color} (with subtle supporting tones from gold/silver/copper/grey/tan). Avoid off-palette gemstones.`,
-        `Pose & posture: ${opts.posture}.`,
-        `Background: ${opts.background}. Keep it symbolic and not busy.`,
-        `Framing: ${opts.frame}.`,
-        noText ? "NO TEXT, NO LETTERS, NO READABLE SYMBOLS anywhere in the image." : "",
-        "No modern elements. No watermark. No signature."
-      ].filter(Boolean).join("\n- ");
-
-      const prompt =
-`Create a fantasy stained glass illustration in the style of a richly illustrated medieval fantasy book, like a sacred memorial window in an ancient crypt.
-
-${titleLine}
-${roleDesc}${magicExtra}${shieldNote}
-
-The entire scene must be rendered as stained glass: segmented glass panels, ${leadLines ? "strong lead cames, " : ""}and luminous translucency. The subject should have a bold, readable silhouette suitable for a stained glass window.
-
-Style & constraints:
-- ${constraints}`;
-
-      return prompt;
-    }
-
-    // Buttons
-    document.getElementById("genBtn").addEventListener("click", () => {
-      document.getElementById("out").value = generatePrompt();
-    });
-
-    document.getElementById("copyBtn").addEventListener("click", async () => {
-      const out = document.getElementById("out");
-      if (!out.value.trim()) out.value = generatePrompt();
-      try{
-        await navigator.clipboard.writeText(out.value);
-        const t = document.getElementById("toast");
-        t.classList.add("show");
-        setTimeout(()=>t.classList.remove("show"), 900);
-      }catch(e){
-        // fallback
-        out.focus(); out.select();
-        document.execCommand("copy");
-      }
-    });
-
-    document.getElementById("resetBtn").addEventListener("click", () => {
-      document.getElementById("heroNum").value = 1;
-      document.getElementById("heroTag").value = "";
-      setActive("genderSet","male");
-      setActive("colorSet","gold");
-      setActive("roleSet","knight");
-      document.getElementById("knightWeapon").value = "hammer";
-      document.getElementById("includeShield").value = "no";
-      document.getElementById("mageMagic").value = "light (radiant)";
-      document.getElementById("healerPatient").value = "no";
-      document.getElementById("posture").value = "stepping forward with purpose";
-      document.getElementById("background").value = "abstract ruins and broken arches, softly suggested";
-      document.getElementById("frame").value = "tall arched stained glass window with medieval decorative border";
-      document.getElementById("out").value = "";
-      // reset bool pills
-      ["noTextPill","storybookPill","leadLinesPill"].forEach(id=>{
-        const el = document.getElementById(id);
-        el.dataset.bool = "true";
-        el.classList.add("active");
-      });
-      // apply disables based on role
-      const role = getActive("roleSet","knight");
-      document.getElementById("knightWeapon").disabled = role !== "knight";
-      document.getElementById("includeShield").disabled = role !== "knight";
-      document.getElementById("mageMagic").disabled = role !== "mage";
-      document.getElementById("healerPatient").disabled = role !== "healer";
-    });
-
-    // Init disables
-    document.getElementById("knightWeapon").disabled = false;
-    document.getElementById("includeShield").disabled = false;
-    document.getElementById("mageMagic").disabled = true;
-    document.getElementById("healerPatient").disabled = true;
-
-    // Auto-generate once on load
-    document.getElementById("out").value = generatePrompt();
-  </script>
+<script>
+function magicDetails(magic){
+switch(magic){
+case "illusion":
+return "Illusion is shown via layered reflections, duplicated silhouettes, warped light paths, and overlapping translucent forms—no readable runes or writing.";
+case "fire":
+return "Fire magic is shown as copper-gold flame shapes and ember motes formed from glass segments and leadwork.";
+case "ice":
+return "Ice magic is shown as sharp crystalline shards and frosty arcs, cool silver-blue within the palette.";
+case "shadow":
+return "Shadow magic is shown as smoky negative space, dim halos, and broken light rays within obsidian and ivory tones.";
+case "storm":
+return "Storm magic is shown as jagged lightning arcs and swirling winds rendered as glass ribbons, kept within the palette.";
+case "arcane runes":
+return "Arcane power is shown as geometric halos and abstract sigil-shapes—avoid anything that resembles letters or readable text.";
+default:
+return "Radiant magic is shown as golden orbs, halos, and soft rays formed from glass segments and lead lines.";
+}
+}
+</script>
 </body>
 </html>
